@@ -333,7 +333,7 @@
             <div class="form-row">
 
                 <%--<button type="submit" runat="server" id="btnsubmit">Submit Form</button>--%>
-                <asp:Button ID="btnsubmit" runat="server" Text="Button" OnClientClick="validate()"/>
+                <asp:Button ID="btnsubmit" class="button" runat="server" Text="Button" OnClientClick="return validate()"/>
 
             </div>
 
@@ -374,7 +374,7 @@
 
 
        function validate() {
-            if (txtmyname.value === '') {
+           if (txtmyname === undefined || txtmyname.value === '') {
                 var errorField = $('.form-input-name-row');
 
                 // Adding the form-invalid-data class will show

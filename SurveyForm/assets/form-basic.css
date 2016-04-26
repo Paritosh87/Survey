@@ -107,7 +107,7 @@ html{
     width: auto;
 }
 
-.form-basic button{
+.form-basic .button{
     display: block;
     border-radius: 2px;
     background-color:  #6caee0;
