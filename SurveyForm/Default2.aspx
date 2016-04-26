@@ -333,7 +333,7 @@
             <div class="form-row">
 
                 <%--<button type="submit" runat="server" id="btnsubmit">Submit Form</button>--%>
-                <asp:Button ID="btnsubmit" class="button" runat="server" Text="Button" OnClientClick="return validate()"/>
+                <asp:Button ID="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()"/>
 
             </div>
 
