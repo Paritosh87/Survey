@@ -1,0 +1,2 @@
+- DOB validation and formatting should be dd/MM/yyyy
+- Address and remark text area should have styles
