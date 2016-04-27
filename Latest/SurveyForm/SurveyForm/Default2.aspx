@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Default2" Codebehind="Default2.aspx.cs" %>
 
 <!DOCTYPE html>
 
@@ -25,8 +25,7 @@
 <body>
     <header>
         <%--<h1 style="align-content: center">Rayara Bhakta Vrunda</h1>--%>
-        <%--<a href="https://chiraan.com/tag/guru-raghavendra/" target="_blank">Guru Raghavendra Swamy Bhakta Vrunda</a>--%>
-        <a href="https://chiraan.com/tag/guru-raghavendra/" target="_blank">Text</a>
+        <a href="https://chiraan.com/tag/guru-raghavendra/" target="_blank">Guru Raghavendra Swamy Bhakta Vrunda</a>
     </header>
     <%--  <div>
     
@@ -189,7 +188,7 @@
             <div class="form-row form-input-name-row-txtcontactnumber">
                 <label>
                     <span>Contact Number</span>
-                    <input type="text" name="name" runat="server" id="txtcontactnumber"/>
+                    <input name="name" runat="server" id="txtcontactnumber" type="number" min="1111111111" max="9999999999"/>
                 </label>
 
                 <!--
@@ -237,7 +236,7 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
-            <div class="form-row form-input-name-row-drpTattvavada">
+            <div class="form-row form-input-name-row-drpleveloftattvavada">
                 <label>
                     <span>Level of Tattvavada</span>
                     &nbsp;<%--<input type="text" name="name">--%><select name="drpTattvavada" runat="server" id="drpleveloftattvavada">
@@ -260,7 +259,7 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
-            <div class="form-row form-input-email-row-txtemail">
+            <div class="form-row form-input-name-row-txtemail">
 
                 <label>
                     <span>Email</span>
@@ -315,7 +314,8 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
-            <div class="form-row form-input-name-row-txtremarks">
+           <%-- <div class="form-row form-input-name-row-txtremarks">--%>
+             <div class="form-row">
                 <label>
                     <span>Remarks</span>
                     <textarea rows="10" cols="70" runat="server" id="txtremarks"></textarea>  
@@ -332,16 +332,18 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
-            <div class="form-row">
-
+            <%--<div class="form-row">--%>
                 <%--<button type="submit" runat="server" id="btnsubmit">Submit Form</button>--%>
-                <asp:Button ID="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click"/>
+                 
 
+                 <div >
+                 <asp:Button ID="btnsubmit" name="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click"/>
+                 <asp:Button ID="btnclear" name="btnclear" CssClass="button" runat="server" Text="Clear Details" OnClick="btnclear_Click"/>
             </div>
 
         </form>
 
-    </div>
+ <</div>
     <footer>
        <h1> © Madhwa Rayara Sabha</h1>
     </footer>
@@ -434,9 +436,12 @@
         }
 
         function validatedrpmonthlyincome() {
-            if ($('#drpmonthlyincome').val() === '') {
+            if ($('#drpmonthlyincome').val() === 'Choose monthly income') {
                 showErrorMessage('form-input-name-row-drpmonthlyincome', true);
                 return false;
+            } else {
+                showErrorMessage('form-input-name-row-drpmonthlyincome', false);
+                return true;
             }
         }
         function validatetxtaddress() {
@@ -468,7 +473,7 @@
             }
         }
         function validatedrpleveloftattvavada() {
-            if ($('#drpleveloftattvavada').val() === '') {
+            if ($('#drpleveloftattvavada').val() === 'Choose an option') {
                 showErrorMessage('form-input-name-row-drpleveloftattvavada', true);
                 return false;
             } else {
@@ -490,7 +495,7 @@
         }
 
         function validatedrpfamilymembers() {
-            if ($('#drpfamilymembers').val() === '') {
+            if ($('#drpfamilymembers').val() === 'Choose an option') {
                 showErrorMessage('form-input-name-row-drpfamilymembers', true);
                 return false;
             } else {
@@ -500,7 +505,7 @@
         }
 
         function validatetxtmedicalconditions() {
-            if ($('#txtmedicalconditions').val() === '') {
+            if ($('#txtmedicalconditions').val() === 'Choose an option') {
                 showErrorMessage('form-input-name-row-txtmedicalconditions', true);
                 return false;
             } else {
@@ -519,26 +524,24 @@
             }
         }
         function validate() {
-            if(!(
-            validatetxtmyname() || 
-            validatetxtfullname()||
-            validatedatepicker()||
-            validatetxtgotra()||
-            validateeducation()||
-            validatetxtoccupation()||
-            validatedrpmonthlyincome()||
-            validatetxtaddress()||
-            validatetxtcontactnumber()||
-            validatetxtfacebookid()||
-            validatedrpleveloftattvavada()||
-            validatetxtemail()||
-            validatedrpfamilymembers()||
-            validatetxtmedicalconditions()||
-            validatetxtremarks())) {
-                return false;
-            }
+            var value = true;
+            if(!validatetxtmyname()) value = false; 
+            if (!validatetxtfullname()) value = false;
+            if (!validatedatepicker()) value = false;
+            if (!validatetxtgotra()) value = false;
+            if (!validateeducation()) value = false;
+            if (!validatetxtoccupation()) value = false;
+            if (!validatedrpmonthlyincome()) value = false;
+            if (!validatetxtaddress()) value = false;
+            if (!validatetxtcontactnumber()) value = false;
+            if (!validatetxtfacebookid()) value = false;
+            if (!validatedrpleveloftattvavada()) value = false;
+            if (!validatetxtemail()) value = false;
+            if (!validatedrpfamilymembers()) value = false;
+            if (!validatetxtmedicalconditions()) value = false;
+            //if (!validatetxtremarks()) value = false;
 
-           return true;
+            return value;
        }
        function showErrorMessage(className,showError) {
            var errorField = $('.'+className);
@@ -651,11 +654,11 @@
            }
        });
 
-       $('#txtremarks').focusout(function () {
-           if (!validatetxtremarks()) {
-               return false;
-           }
-       });
+       //$('#txtremarks').focusout(function () {
+       //    if (!validatetxtremarks()) {
+       //        return false;
+       //    }
+       //});
 
 
 </script>

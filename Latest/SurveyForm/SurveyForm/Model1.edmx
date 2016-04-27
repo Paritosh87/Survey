@@ -59,7 +59,7 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityContainer Name="masterEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Surveys" EntityType="Self.Survey" />
+          <EntitySet Name="PersonDetails" EntityType="Self.Survey" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -67,7 +67,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities3">
-          <EntitySetMapping Name="Surveys">
+          <EntitySetMapping Name="PersonDetails">
             <EntityTypeMapping TypeName="masterModel.Survey">
               <MappingFragment StoreEntitySet="Survey">
                 <ScalarProperty Name="VolunteerName" ColumnName="VolunteerName" />

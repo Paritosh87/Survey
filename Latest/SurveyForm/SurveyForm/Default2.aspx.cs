@@ -21,19 +21,41 @@ public partial class Default2 : System.Web.UI.Page
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
         //if (!ValidateInputs()) ;
+        btnsubmit.Text = "";
+        btnsubmit.Text = "Saving...";
+        btnsubmit.Enabled = false;
 
-        //m.Surveys.Add(s);
-        //m.SaveChanges();
-        using (var context = new masterEntities3())
-       
+        using (var context = new CoreDBEntities2())
         {
-            Survey s = new Survey();
+            PersonDetail p = new PersonDetail();
             {
-                s.VolunteerName = "Pari";
+                p.VolunteerName = Request.Form["txtmyname"];
+                p.Address = Request.Form["txtaddress"];
+                p.ContactNumber = Request.Form["txtcontactnumber"];
+                p.CountFamilyMembers = Request.Form["drpfamilymembers"];
+                p.DOB = Request.Form["datepicker"];
+                p.Education = Request.Form["txteducation"];
+                p.Email = Request.Form["txtemail"];
+                p.FacebookId = Request.Form["txtfacebookid"];
+                p.FirstName = Request.Form["txtfirstname"];
+                p.Gotra = Request.Form["txtgotra"];
+                p.LastName = Request.Form["txtlastname"];
+                p.LevelofTatvavada = Request.Form["drpleveloftattvavada"];
+                p.MedicalConditions = Request.Form["txtmedicalconditions"];
+                p.MiddleName = Request.Form["txtmiddlename"];
+                p.MonthlyIncome = Request.Form["drpmonthlyincome"];
+                p.Occupation = Request.Form["txtoccupation"];
+                p.Remarks = Request.Form["txtremarks"];
             };
-            context.Surveys.Add(s);
+            context.PersonDetails.Add(p);
             context.SaveChanges();
         }
 
+        btnsubmit.Text = "Save Details Success";
+    }
+
+    protected void btnclear_Click(object sender, EventArgs e)
+    {
+        Response.Redirect(Request.RawUrl);
     }
 }

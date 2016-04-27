@@ -25,6 +25,6 @@ namespace SurveyForm
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Survey> Surveys { get; set; }
+        public virtual DbSet<Survey> PersonDetails { get; set; }
     }
 }
