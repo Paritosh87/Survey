@@ -57,6 +57,42 @@ public partial class Default2 {
     protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker;
     
     /// <summary>
+    /// drphours control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlSelect drphours;
+    
+    /// <summary>
+    /// drpminutes control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlSelect drpminutes;
+    
+    /// <summary>
+    /// drpseconds control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlSelect drpseconds;
+    
+    /// <summary>
+    /// drpmeridian control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlSelect drpmeridian;
+    
+    /// <summary>
     /// txtgotra control.
     /// </summary>
     /// <remarks>
@@ -100,15 +136,6 @@ public partial class Default2 {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlTextArea txtaddress;
-    
-    /// <summary>
-    /// txtcontactnumber control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtcontactnumber;
     
     /// <summary>
     /// txtfacebookid control.

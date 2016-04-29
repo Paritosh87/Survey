@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>Madhwa Rayara Sabha</title>
 
@@ -16,10 +16,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <%--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>--%>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script>
-        $(function () { $("#datepicker").datepicker(); });
+        $(function () { $('#datepicker').datepicker({ changeYear: true, changeMonth: true, yearRange: "-100:+0", maxDate:"-1D" }); });
     </script>
 </head>
 <body>
@@ -27,9 +26,6 @@
         <%--<h1 style="align-content: center">Rayara Bhakta Vrunda</h1>--%>
         <a href="https://chiraan.com/tag/guru-raghavendra/" target="_blank">Guru Raghavendra Swamy Bhakta Vrunda</a>
     </header>
-    <%--  <div>
-    
-    </div>--%>
     <div class="main-content" style="padding-top: 50px">
 
         <!-- You only need this form and the form-validation.css -->
@@ -46,17 +42,13 @@
                     <span>Your Full name</span>
                     <input type="text" name="name" placeholder="Enter your Full Name" runat="server" id="txtmyname"/>
                 </label>
-
                 <!--
                     Add these three elements to every form row. They will be shown by the
                     .form-valid-data and .form-invalid-data classes (see the JS for an example).
                 -->
-
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
-
                 <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
                 <span class="form-invalid-data-info"></span>
-
             </div>
             <div class="form-row form-input-name-row-txtfullname">
                 <label>
@@ -69,23 +61,186 @@
                 <label>
                     <input type="text" name="name" placeholder="Last Name" style="width:150px" runat="server" id="txtlastname"/>
                 </label>
-
+                 <!--
+                    Add these three elements to every form row. They will be shown by the
+                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
+                -->
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
 
             </div>
             <div class="form-row form-input-name-row-datepicker">
                 <label>
                     <span>Date of Birth</span>
-                    <input type="text" id="datepicker" runat="server" />
-
+                    <input type="text" id="datepicker" runat="server" placeholder="Enter in MM/dd/yyyy"/>
                 </label>
-
                 <!--
                     Add these three elements to every form row. They will be shown by the
                     .form-valid-data and .form-invalid-data classes (see the JS for an example).
                 -->
-
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
 
+            </div>
+             <div class="form-row form-input-name-row-drptimerange">
+                <label>
+                    <span>Time of Birth</span>
+                    <%--<input type="text" name="name">--%>
+                     <select name="dropdown" runat="server" id="drphours" style="width:80px">
+                        <option value="hours">Hrs</option>
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                     <select name="dropdown" runat="server" id="drpminutes" style="width:80px">
+                        <option value="minutes">Min</option>
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                    </select>
+                     <select name="dropdown" runat="server" id="drpseconds" style="width:80px">
+                        <option value="seconds">Sec</option>
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                    </select>
+                     <select name="dropdown" runat="server" id="drpmeridian" style="width:90px">
+                        <option value="meridian">Mer</option>
+                         <option value="00">am</option>
+                        <option value="01">pm</option>
+                    </select>
+                </label>
+                <!--
+                    Add these three elements to every form row. They will be shown by the
+                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
+                -->
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
                 <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
                 <span class="form-invalid-data-info"></span>
 
@@ -94,14 +249,12 @@
             <div class="form-row form-input-name-row-txtgotra">
                 <label>
                     <span>Gotra</span>
-                    <input type="text" name="name" runat="server" id="txtgotra">
+                    <input type="text" name="name" runat="server" id="txtgotra" placeholder="Enter Gotra"/>
                 </label>
-
                 <!--
                     Add these three elements to every form row. They will be shown by the
                     .form-valid-data and .form-invalid-data classes (see the JS for an example).
                 -->
-
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
 
                 <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
@@ -111,7 +264,7 @@
             <div class="form-row form-input-name-row-txteducation">
                 <label>
                     <span>Education</span>
-                    <input type="text" name="name" runat="server" id="txteducation">
+                    <input type="text" name="name" runat="server" id="txteducation" placeholder="Enter Education"/>
                 </label>
 
                 <!--
@@ -128,7 +281,7 @@
             <div class="form-row form-input-name-row-txtoccupation">
                 <label>
                     <span>Occupation</span>
-                    <input type="text" name="name" runat="server" id="txtoccupation"/>
+                    <input type="text" name="name" runat="server" id="txtoccupation" placeholder="Enter Occupation"/>
                 </label>
 
                 <!--
@@ -179,16 +332,16 @@
                     .form-valid-data and .form-invalid-data classes (see the JS for an example).
                 -->
 
-                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+<%--                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
 
                 <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
-                <span class="form-invalid-data-info"></span>
+                <span class="form-invalid-data-info"></span>--%>
 
             </div>
             <div class="form-row form-input-name-row-txtcontactnumber">
                 <label>
                     <span>Contact Number</span>
-                    <input name="name" runat="server" id="txtcontactnumber" type="number" min="1111111111" max="9999999999"/>
+                    <input name="name" id="txtcontactnumber" type="number"  min="11111111" max="99999999999"/>
                 </label>
 
                 <!--
@@ -202,27 +355,10 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
-            <%--<div class="form-row form-input-name-row">
-                <label>
-                    <span>Email</span>
-                    <input type="text" name="name" runat="server" id="txtemail"/>
-                </label>
-
-                <!--
-                    Add these three elements to every form row. They will be shown by the
-                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
-                -->
-
-                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
-
-                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
-                <span class="form-invalid-data-info"></span>
-
-            </div>--%>
             <div class="form-row form-input-name-row-txtfacebookid">
                 <label>
                     <span>Facebook Id</span>
-                    <input type="text" name="name" runat="server" id="txtfacebookid"/>
+                    <input type="text" name="name" runat="server" id="txtfacebookid" placeholder="Enter Facebook ID"/>
                 </label>
 
                 <!--
@@ -239,7 +375,7 @@
             <div class="form-row form-input-name-row-drpleveloftattvavada">
                 <label>
                     <span>Level of Tattvavada</span>
-                    &nbsp;<%--<input type="text" name="name">--%><select name="drpTattvavada" runat="server" id="drpleveloftattvavada">
+                    &nbsp;<%--<input type="text" name="name">--%><select name="drpTattvavada" runat="server" id="drpleveloftattvavada" placeholder="Tatvavada Knowledge">
                         <option>Choose an option</option>
                         <option>Beginner</option>
                         <option>Intermediate</option>
@@ -263,7 +399,7 @@
 
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email" runat="server" id="txtemail"/>
+                    <input type="email" name="email" runat="server" id="txtemail" placeholder="Enter Email"/>
                 </label>
 
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
@@ -300,7 +436,7 @@
             <div class="form-row form-input-name-row-txtmedicalconditions">
                 <label>
                     <span>Medical Condition</span>
-                    <input type="text" name="name" runat="server" id="txtmedicalconditions"/>
+                    <input type="text" name="name" runat="server" id="txtmedicalconditions" placeholder="Enter Medical Condition"/>
                 </label>
 
                 <!--
@@ -318,7 +454,7 @@
              <div class="form-row">
                 <label>
                     <span>Remarks</span>
-                    <textarea rows="10" cols="70" runat="server" id="txtremarks"></textarea>  
+                    <textarea rows="10" cols="70" runat="server" id="txtremarks" placeholder="Enter Remarks"></textarea>  
                 </label>
 
                 <!--
@@ -337,13 +473,13 @@
                  
 
                  <div >
-                 <asp:Button ID="btnsubmit" name="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click"/>
+                 <asp:Button ID="btnsubmit" name="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click" style="margin-top:10px"/>
                  <asp:Button ID="btnclear" name="btnclear" CssClass="button" runat="server" Text="Clear Details" OnClick="btnclear_Click"/>
             </div>
 
         </form>
 
- <</div>
+ </div>
     <footer>
        <h1> © Madhwa Rayara Sabha</h1>
     </footer>
@@ -388,7 +524,7 @@
         }
 
         function validatetxtfullname() {
-            if ($('#txtfirstname').val() === '' || $('#txtmiddlename').val() === '' || $('#txtlastname').val() === '') {
+            if ($('#txtfirstname').val() === '' || $('#txtlastname').val() === '') {
                 showErrorMessage('form-input-name-row-txtfullname', true);
                 return false;
             }
@@ -444,6 +580,15 @@
                 return true;
             }
         }
+        function validatedrptimeofbirth() {
+            if ($('#drphours').val() === 'Hrs' || $('#drphours').val() === 'Min' || $('#drphours').val() === 'Sec' || $('#drphours').val() === 'Mer'){
+                showErrorMessage('form-input-name-row-drpmonthlyincome', true);
+                return false;
+            } else {
+                showErrorMessage('form-input-name-row-drpmonthlyincome', false);
+                return true;
+            }
+        }
         function validatetxtaddress() {
             if ($('#txtaddress').val() === '') {
                 showErrorMessage('form-input-name-row-txtaddress', true);
@@ -454,7 +599,7 @@
             }
         }
         function validatetxtcontactnumber() {
-            if ($('#txtcontactnumber').val() === '') {
+            if ($('#txtcontactnumber').val() === '' || $('#txtcontactnumber').val().length > 11) {
                 showErrorMessage('form-input-name-row-txtcontactnumber', true);
                 return false;
             } else {
@@ -567,11 +712,6 @@
        });
 
        $('#txtfirstname').focusout(function () {
-           if (!validatetxtfullname()) {
-               return false;
-           }
-       });
-       $('#txtmiddlename').focusout(function () {
            if (!validatetxtfullname()) {
                return false;
            }
