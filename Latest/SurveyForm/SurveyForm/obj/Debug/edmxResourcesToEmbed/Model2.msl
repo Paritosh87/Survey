@@ -4,6 +4,7 @@
     <EntitySetMapping Name="PersonDetails">
       <EntityTypeMapping TypeName="CoreDBModel.PersonDetail">
         <MappingFragment StoreEntitySet="PersonDetails">
+          <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
           <ScalarProperty Name="VolunteerName" ColumnName="VolunteerName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />

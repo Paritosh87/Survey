@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="assets/demo.css" />
     <link rel="stylesheet" href="assets/form-validation.css" />
+    <link href="assets/form-basic.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
@@ -65,9 +66,9 @@
                     Add these three elements to every form row. They will be shown by the
                     .form-valid-data and .form-invalid-data classes (see the JS for an example).
                 -->
-                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+<%--                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
                 <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
-                <span class="form-invalid-data-info"></span>
+                <span class="form-invalid-data-info"></span>--%>
 
             </div>
             <div class="form-row form-input-name-row-datepicker">
@@ -167,7 +168,7 @@
                         <option value="58">58</option>
                         <option value="59">59</option>
                     </select>
-                     <select name="dropdown" runat="server" id="drpseconds" style="width:80px">
+                     <select name="dropdown" runat="server" id="drpseconds" style="width:85px">
                         <option value="seconds">Sec</option>
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -245,7 +246,21 @@
                 <span class="form-invalid-data-info"></span>
 
             </div>
+               <div class="form-row form-input-name-row-txtplaceofbirth">
+                <label>
+                    <span>Place of Birth</span>
+                    <input type="text" name="name" runat="server" id="txtplaceofbirth" placeholder="Enter Place of Birth"/>
+                </label>
+                <!--
+                    Add these three elements to every form row. They will be shown by the
+                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
+                -->
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
 
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
+
+            </div>
             <div class="form-row form-input-name-row-txtgotra">
                 <label>
                     <span>Gotra</span>
@@ -324,7 +339,7 @@
                 <label>
                     <span>Address</span>
                     <%--<input type="text" name="name">--%>
-                    <textarea rows="3" cols="32" runat="server" id="txtaddress"></textarea>  
+                    <textarea rows="3" cols="32" runat="server" id="txtaddress" placeholder="Enter Address"></textarea>  
                 </label>
 
                 <!--
@@ -341,7 +356,7 @@
             <div class="form-row form-input-name-row-txtcontactnumber">
                 <label>
                     <span>Contact Number</span>
-                    <input name="name" id="txtcontactnumber" type="number"  min="11111111" max="99999999999"/>
+                    <input name="name" id="txtcontactnumber" type="number"  min="11111111" max="99999999999" placeholder="Enter Contact Number"/>
                 </label>
 
                 <!--
@@ -581,11 +596,21 @@
             }
         }
         function validatedrptimeofbirth() {
-            if ($('#drphours').val() === 'Hrs' || $('#drphours').val() === 'Min' || $('#drphours').val() === 'Sec' || $('#drphours').val() === 'Mer'){
-                showErrorMessage('form-input-name-row-drpmonthlyincome', true);
+            if ($('#drphours').val() === 'hours' || $('#drpminutes').val() === 'minutes' || $('#drpseconds').val() === 'seconds' || $('#drpmeridian').val() === 'meridian'){
+                //showErrorMessage('form-input-name-row-drptimerange', true);
+                //return false;
+                return true;
+            } else {
+                showErrorMessage('form-input-name-row-drptimerange', false);
+                return true;
+            }
+        }
+        function validatetxtplaceofbirth() {
+            if ($('#txtplaceofbirth').val() === '') {
+                showErrorMessage('form-input-name-row-txtplaceofbirth', true);
                 return false;
             } else {
-                showErrorMessage('form-input-name-row-drpmonthlyincome', false);
+                showErrorMessage('form-input-name-row-txtplaceofbirth', false);
                 return true;
             }
         }
@@ -684,6 +709,8 @@
             if (!validatetxtemail()) value = false;
             if (!validatedrpfamilymembers()) value = false;
             if (!validatetxtmedicalconditions()) value = false;
+            if (!validatedrptimeofbirth()) value = false;
+            if (!validatetxtplaceofbirth()) value = false;
             //if (!validatetxtremarks()) value = false;
 
             return value;
@@ -693,6 +720,7 @@
            // Adding the form-invalid-data class will show
            // the error message and the red x for that field
            if (showError) {
+               //form-input-name-row-txtmyname
                errorField.addClass('form-invalid-data');
            }
            else {
@@ -751,6 +779,26 @@
                return false;
            }
        });
+       $('#drphours').focusout(function () {
+           if (!validatedrptimeofbirth()) {
+               return false;
+           }
+       });
+       $('#drpminutes').focusout(function () {
+           if (!validatedrptimeofbirth()) {
+               return false;
+           }
+       });
+       $('#drpseconds').focusout(function () {
+           if (!validatedrptimeofbirth()) {
+               return false;
+           }
+       });
+       $('#drpmeridian').focusout(function () {
+           if (!validatedrptimeofbirth()) {
+               return false;
+           }
+       });
 
        $('#txtaddress').focusout(function () {
            if (!validatetxtaddress()) {
@@ -790,6 +838,12 @@
 
        $('#txtmedicalconditions').focusout(function () {
            if (!validatetxtmedicalconditions()) {
+               return false;
+           }
+       });
+
+       $('#txtplaceofbirth').focusout(function () {
+           if (!validatetxtplaceofnbirth()) {
                return false;
            }
        });

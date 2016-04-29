@@ -32,5 +32,6 @@ namespace SurveyForm
         public string MedicalConditions { get; set; }
         public string Remarks { get; set; }
         public long Id { get; set; }
+        public string PlaceofBirth { get; set; }
     }
 }

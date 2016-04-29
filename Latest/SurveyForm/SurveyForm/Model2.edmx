@@ -27,6 +27,7 @@
           <Property Name="MedicalConditions" Type="nvarchar(max)" />
           <Property Name="Remarks" Type="nvarchar(max)" />
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaceofBirth" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="CoreDBModelStoreContainer">
           <EntitySet Name="PersonDetails" EntityType="Self.PersonDetails" Schema="dbo" store:Type="Tables" />
@@ -57,6 +58,7 @@
           <Property Name="MedicalConditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceofBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="CoreDBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PersonDetails" EntityType="Self.PersonDetail" />
@@ -70,6 +72,7 @@
           <EntitySetMapping Name="PersonDetails">
             <EntityTypeMapping TypeName="CoreDBModel.PersonDetail">
               <MappingFragment StoreEntitySet="PersonDetails">
+                <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
                 <ScalarProperty Name="VolunteerName" ColumnName="VolunteerName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />

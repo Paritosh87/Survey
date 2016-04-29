@@ -93,6 +93,15 @@ public partial class Default2 {
     protected global::System.Web.UI.HtmlControls.HtmlSelect drpmeridian;
     
     /// <summary>
+    /// txtplaceofbirth control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlInputText txtplaceofbirth;
+    
+    /// <summary>
     /// txtgotra control.
     /// </summary>
     /// <remarks>

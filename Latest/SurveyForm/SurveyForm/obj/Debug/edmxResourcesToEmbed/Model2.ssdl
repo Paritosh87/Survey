@@ -22,6 +22,7 @@
     <Property Name="MedicalConditions" Type="nvarchar(max)" />
     <Property Name="Remarks" Type="nvarchar(max)" />
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceofBirth" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="CoreDBModelStoreContainer">
     <EntitySet Name="PersonDetails" EntityType="Self.PersonDetails" Schema="dbo" store:Type="Tables" />
