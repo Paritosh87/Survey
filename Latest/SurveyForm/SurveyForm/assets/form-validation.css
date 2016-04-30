@@ -144,7 +144,7 @@ textarea, .length{
     font-weight: bold;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
     padding: 14px 22px;
-    margin: 40px 23px 0 183px;
+    margin: 30px 23px 10px 150px;
     padding-left: 20px;
 }
 
@@ -223,6 +223,12 @@ textarea, .length{
     .form-validation .button{
         margin: 0;
     }
+
+    .divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
 
 }
 

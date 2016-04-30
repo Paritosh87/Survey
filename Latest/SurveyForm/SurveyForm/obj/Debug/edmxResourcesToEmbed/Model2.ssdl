@@ -23,6 +23,9 @@
     <Property Name="Remarks" Type="nvarchar(max)" />
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PlaceofBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeofBirth" Type="nchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="CoreDBModelStoreContainer">
     <EntitySet Name="PersonDetails" EntityType="Self.PersonDetails" Schema="dbo" store:Type="Tables" />

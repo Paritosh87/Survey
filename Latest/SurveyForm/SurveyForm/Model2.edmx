@@ -28,6 +28,9 @@
           <Property Name="Remarks" Type="nvarchar(max)" />
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PlaceofBirth" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeofBirth" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="CoreDBModelStoreContainer">
           <EntitySet Name="PersonDetails" EntityType="Self.PersonDetails" Schema="dbo" store:Type="Tables" />
@@ -59,6 +62,9 @@
           <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PlaceofBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeofBirth" Type="String" Unicode="true" FixedLength="true" MaxLength="50" />
+          <Property Name="CreatedDate" Type="String" />
+          <Property Name="ModifiedDate" Type="String" />
         </EntityType>
         <EntityContainer Name="CoreDBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PersonDetails" EntityType="Self.PersonDetail" />
@@ -72,6 +78,9 @@
           <EntitySetMapping Name="PersonDetails">
             <EntityTypeMapping TypeName="CoreDBModel.PersonDetail">
               <MappingFragment StoreEntitySet="PersonDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TimeofBirth" ColumnName="TimeofBirth" />
                 <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
                 <ScalarProperty Name="VolunteerName" ColumnName="VolunteerName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />

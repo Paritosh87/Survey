@@ -233,8 +233,8 @@
                     </select>
                      <select name="dropdown" runat="server" id="drpmeridian" style="width:90px">
                         <option value="meridian">Mer</option>
-                         <option value="00">am</option>
-                        <option value="01">pm</option>
+                         <option value="am">am</option>
+                        <option value="pm">pm</option>
                     </select>
                 </label>
                 <!--
@@ -356,7 +356,7 @@
             <div class="form-row form-input-name-row-txtcontactnumber">
                 <label>
                     <span>Contact Number</span>
-                    <input name="name" id="txtcontactnumber" type="number"  min="11111111" max="99999999999" placeholder="Enter Contact Number"/>
+                    <input name="txtcontactnumber" id="txtcontactnumber" type="number"  min="11111111" max="99999999999" placeholder="Enter Contact Number"/>
                 </label>
 
                 <!--
@@ -487,8 +487,9 @@
                 <%--<button type="submit" runat="server" id="btnsubmit">Submit Form</button>--%>
                  
 
-                 <div >
-                 <asp:Button ID="btnsubmit" name="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click" style="margin-top:10px"/>
+                 <div class="form-row">
+                 <asp:Button ID="btnsubmit" name="btnsubmit" class="button" runat="server" Text="Save Details" OnClientClick="return validate()" OnClick="btnsubmit_Click"/>
+                     <%--<div class="divider"/>--%>
                  <asp:Button ID="btnclear" name="btnclear" CssClass="button" runat="server" Text="Clear Details" OnClick="btnclear_Click"/>
             </div>
 

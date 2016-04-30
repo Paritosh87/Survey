@@ -33,5 +33,8 @@ namespace SurveyForm
         public string Remarks { get; set; }
         public long Id { get; set; }
         public string PlaceofBirth { get; set; }
+        public string TimeofBirth { get; set; }
+        public string CreatedDate { get; set; }
+        public string ModifiedDate { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SurveyForm;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -46,6 +47,9 @@ public partial class Default2 : System.Web.UI.Page
                 p.MonthlyIncome = Request.Form["drpmonthlyincome"];
                 p.Occupation = Request.Form["txtoccupation"];
                 p.Remarks = Request.Form["txtremarks"];
+                p.PlaceofBirth = Request.Form["txtplaceofbirth"];
+                p.TimeofBirth = Request.Form["drphours"]+":"+Request.Form["drpminutes"]+":"+Request.Form["drpseconds"]+":"+Request.Form["drpmeridian"];
+                p.CreatedDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture);
             };
             context.PersonDetails.Add(p);
             context.SaveChanges();
